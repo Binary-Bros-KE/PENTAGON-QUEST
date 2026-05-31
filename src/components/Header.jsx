@@ -1,12 +1,14 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaBars, FaTimes, FaFacebook, FaInstagram, FaTwitter, FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
+import { useContactModal } from '../hooks/useContactModal';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const { openContactModal } = useContactModal();
 
   // Handle scroll for sticky bottom strip
   useEffect(() => {
@@ -32,12 +34,12 @@ export default function Header() {
   }, []);
 
   const navLinks = [
-    { name: 'Home', path: '#home' },
-    { name: 'Tours', path: '#tours' },
-    { name: 'Destinations', path: '#destinations' },
-    { name: 'Packages', path: '#packages' },
-    { name: 'Blog', path: '#blog' },
-    { name: 'Contact', path: '#contact' },
+    { name: 'Home', path: '/' },
+    { name: 'About', path: '/about' },
+    { name: 'Services', path: '/services' },
+    { name: 'Tours', path: '/tours' },
+    { name: 'MICE', path: '/mice' },
+    { name: 'Contact', path: '/contact' },
   ];
 
   const socialLinks = [
@@ -135,28 +137,30 @@ export default function Header() {
           {!isMobile && (
             <div className="flex items-center gap-2 rounded-full bg-muted px-2 py-2 border border-border">
               {navLinks.map((link) => (
-                <a
+                <NavLink
                   key={link.name}
-                  href={link.path}
-                  className={`rounded-full px-4 py-2 text-sm font-bold transition-all duration-200 ${
-                    link.name === 'Home'
+                  to={link.path}
+                  end={link.path === '/'}
+                  className={({ isActive }) => `rounded-full px-4 py-2 text-sm font-bold transition-all duration-200 ${
+                    isActive
                       ? 'bg-dark text-white shadow-sm'
                       : 'text-dark hover:bg-white hover:text-primary hover:shadow-sm'
                   }`}
                 >
                   {link.name}
-                </a>
+                </NavLink>
               ))}
             </div>
           )}
 
           {!isMobile && (
-            <a
-              href="#contact"
+            <button
+              type="button"
+              onClick={() => openContactModal('Plan a Trip')}
               className="shrink-0 rounded bg-primary px-5 py-3 text-sm font-bold uppercase tracking-wide text-white shadow-[0_10px_24px_rgba(255,107,53,0.22)] hover:bg-primary-dark transition-colors duration-200"
             >
               Plan a Trip
-            </a>
+            </button>
           )}
 
           {/* Mobile Menu Toggle */}
@@ -181,22 +185,28 @@ export default function Header() {
             >
               <div className="px-4 py-5 flex flex-col gap-2">
                 {navLinks.map((link) => (
-                  <a
+                  <NavLink
                     key={link.name}
-                    href={link.path}
+                    to={link.path}
+                    end={link.path === '/'}
                     onClick={() => setIsMenuOpen(false)}
-                    className="rounded px-4 py-3 text-dark hover:bg-muted hover:text-primary transition-colors duration-200 font-semibold"
+                    className={({ isActive }) => `rounded px-4 py-3 transition-colors duration-200 font-semibold ${
+                      isActive ? 'bg-dark text-white' : 'text-dark hover:bg-muted hover:text-primary'
+                    }`}
                   >
                     {link.name}
-                  </a>
+                  </NavLink>
                 ))}
-                <a
-                  href="#contact"
-                  onClick={() => setIsMenuOpen(false)}
+                <button
+                  type="button"
+                  onClick={() => {
+                    setIsMenuOpen(false);
+                    openContactModal('Plan a Trip');
+                  }}
                   className="mt-2 rounded bg-primary px-4 py-3 text-center text-white font-bold uppercase tracking-wide hover:bg-primary-dark transition-colors duration-200"
                 >
                   Plan a Trip
-                </a>
+                </button>
               </div>
             </motion.div>
           )}

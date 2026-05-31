@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import { useContactModal } from '../../hooks/useContactModal';
 
 const heroSlides = [
   {
@@ -41,6 +42,7 @@ const heroSlides = [
 export default function Hero() {
   const [activeSlide, setActiveSlide] = useState(0);
   const [isDesktop, setIsDesktop] = useState(false);
+  const { openContactModal } = useContactModal();
   const currentSlide = heroSlides[activeSlide];
   const currentImage = isDesktop ? currentSlide.desktopImage : currentSlide.mobileImage;
 
@@ -114,18 +116,20 @@ export default function Hero() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <a
-                href="#tours"
+              <button
+                type="button"
+                onClick={() => openContactModal(currentSlide.primaryAction)}
                 className="inline-flex min-h-[3.5rem] items-center justify-center rounded bg-primary px-8 py-4 text-sm font-bold uppercase tracking-wide text-white shadow-[0_18px_38px_rgba(255,107,53,0.32)] hover:bg-primary-dark transition-colors duration-200"
               >
                 {currentSlide.primaryAction}
-              </a>
-              <a
-                href="#contact"
+              </button>
+              <button
+                type="button"
+                onClick={() => openContactModal(currentSlide.secondaryAction)}
                 className="inline-flex min-h-[3.5rem] items-center justify-center rounded border border-white/35 bg-white/10 px-8 py-4 text-sm font-bold uppercase tracking-wide text-white backdrop-blur hover:bg-white hover:text-dark transition-colors duration-200"
               >
                 {currentSlide.secondaryAction}
-              </a>
+              </button>
             </div>
           </motion.div>
         </AnimatePresence>

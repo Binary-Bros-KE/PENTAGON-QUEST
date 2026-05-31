@@ -9,6 +9,7 @@ import {
   FaTwitter,
 } from 'react-icons/fa';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -17,28 +18,28 @@ export default function Footer() {
     {
       title: 'Explore',
       links: [
-        { name: 'Destinations', href: '#' },
-        { name: 'Tours & Packages', href: '#' },
-        { name: 'Travel Guides', href: '#' },
-        { name: 'Adventure Activities', href: '#' },
+        { name: 'Tours & Safaris', href: '/tours' },
+        { name: 'Local & International Tours', href: '/tours' },
+        { name: 'MICE Tourism', href: '/mice' },
+        { name: 'Airport Transfers', href: '/services' },
       ],
     },
     {
       title: 'Support',
       links: [
-        { name: 'Contact Us', href: '#' },
-        { name: 'FAQs', href: '#' },
-        { name: 'Booking Help', href: '#' },
-        { name: 'Travel Insurance', href: '#' },
+        { name: 'Contact Us', href: '/contact' },
+        { name: 'Trip Planning', href: '/contact' },
+        { name: 'Travel Support', href: '/services' },
+        { name: 'Air Ticketing', href: '/services' },
       ],
     },
     {
       title: 'Company',
       links: [
-        { name: 'About Us', href: '#' },
-        { name: 'Blog', href: '#' },
-        { name: 'Careers', href: '#' },
-        { name: 'Press', href: '#' },
+        { name: 'About Us', href: '/about' },
+        { name: 'Our Values', href: '/about' },
+        { name: 'Why Choose Us', href: '/about' },
+        { name: 'Our Services', href: '/services' },
       ],
     },
     {
@@ -184,13 +185,13 @@ export default function Footer() {
                 <ul className="space-y-3">
                   {section.links.map((link) => (
                     <li key={link.name}>
-                      <a
-                        href={link.href}
+                      <Link
+                        to={link.href}
                         className="group inline-flex items-center gap-2 text-gray-light hover:text-primary transition-colors duration-200 text-sm"
                       >
                         <span className="h-px w-0 bg-primary transition-all duration-200 group-hover:w-4"></span>
                         {link.name}
-                      </a>
+                      </Link>
                     </li>
                   ))}
                 </ul>

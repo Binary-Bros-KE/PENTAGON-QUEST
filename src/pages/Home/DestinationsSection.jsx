@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { FaArrowRight } from 'react-icons/fa';
+import { useContactModal } from '../../hooks/useContactModal';
 
 const destinations = [
   {
@@ -29,6 +30,8 @@ const destinations = [
 ];
 
 export default function DestinationsSection() {
+  const { openContactModal } = useContactModal();
+
   return (
     <section id="destinations" className="bg-white px-5 py-24 md:px-8">
       <div className="max-w-7xl mx-auto">
@@ -39,9 +42,13 @@ export default function DestinationsSection() {
               Start local. Go global. Keep the planning sharp.
             </h2>
           </div>
-          <a href="#contact" className="inline-flex items-center gap-2 text-sm font-black uppercase tracking-wide text-primary hover:text-primary-dark">
+          <button
+            type="button"
+            onClick={() => openContactModal('Request an itinerary')}
+            className="inline-flex items-center gap-2 text-sm font-black uppercase tracking-wide text-primary hover:text-primary-dark"
+          >
             Request an itinerary <FaArrowRight size={14} />
-          </a>
+          </button>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">

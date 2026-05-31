@@ -1,8 +1,11 @@
 import { FaEnvelope, FaMapMarkerAlt, FaPhone } from 'react-icons/fa';
+import { useContactModal } from '../../hooks/useContactModal';
 
 const contactImage = '/start-here.jpg';
 
 export default function ContactSection() {
+  const { openContactModal } = useContactModal();
+
   return (
     <section id="contact" className="bg-dark px-5 py-24 text-white md:px-8">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-12 items-stretch">
@@ -57,7 +60,11 @@ export default function ContactSection() {
               </select>
             </div>
             <textarea className="min-h-36 rounded border border-border px-4 py-3 focus:border-primary focus:outline-none" placeholder="Tell us what you have in mind"></textarea>
-            <button className="min-h-[3.5rem] rounded bg-primary px-8 py-4 text-sm font-black uppercase tracking-wide text-white hover:bg-primary-dark transition-colors duration-200">
+            <button
+              type="button"
+              onClick={() => openContactModal('Send trip request')}
+              className="min-h-[3.5rem] rounded bg-primary px-8 py-4 text-sm font-black uppercase tracking-wide text-white hover:bg-primary-dark transition-colors duration-200"
+            >
               Send trip request
             </button>
           </form>
