@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import 'tailwindcss';
+
+
+@theme {
+  /* Pentagon Quest Color Tokens */
+  --color-primary: var(--primary);
+  --color-primary-light: var(--primary-light);
+  --color-primary-dark: var(--primary-dark);
+  
+  --color-secondary: var(--secondary);
+  --color-secondary-light: var(--secondary-light);
+  --color-secondary-dark: var(--secondary-dark);
+  
+  --color-dark: var(--dark);
+  --color-dark-light: var(--dark-light);
+  --color-light: var(--light);
+  --color-gray: var(--gray);
+  --color-gray-light: var(--gray-light);
+  
+  --color-yellow: var(--yellow);
+  --color-yellow-light: var(--yellow-light);
+  
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-border: var(--border);
+  --color-border-dark: var(--border-dark);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+}
+
+:root {
+  /* Pentagon Quest Color Palette */
+  /* Primary: Orange (from logo) */
+  --primary: #EBB84B;
+  --primary-light: #FFB380;
+  --primary-dark: #EBB84B;
+  
+  /* Secondary: Cyan/Turquoise (from logo) */
+  --secondary: #00C9D7;
+  --secondary-light: #5FE3E6;
+  --secondary-dark: #009CA6;
+  
+  /* Neutrals */
+  --dark: #1A1A1A;
+  --dark-light: #2D2D2D;
+  --light: #F5F5F5;
+  --white: #FFFFFF;
+  --gray: #666666;
+  --gray-light: #CCCCCC;
+  
+  /* Accent colors */
+  --yellow: #FFC107;
+  --yellow-light: #FFE082;
+  
+  /* UI Colors */
+  --background: #FFFFFF;
+  --foreground: #1A1A1A;
+  --card: #FFFFFF;
+  --card-foreground: #1A1A1A;
+  --border: #E0E0E0;
+  --border-dark: #D0D0D0;
+  --muted: #F5F5F5;
+  --muted-foreground: #666666;
+}
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    background-color: var(--background);
+    color: #1A1A1A;
+    font-family: "Jost", sans-serif;
+    line-height: 1.6;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    color: #1A1A1A;
+    line-height: 1.2;
+  }
+  
+  h1 {
+    font-size: 2.25rem;
+  }
+  
+  h2 {
+    font-size: 1.875rem;
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+  }
+  
+  a {
+    color: #FF6B35;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  
+  a:hover {
+    color: #D94E1F;
+  }
+  
+  button {
+    cursor: pointer;
+  }
+  
+  input, textarea, select {
+    font-family: inherit;
+  }
+}
+
+@layer components {
+  .btn {
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .btn-primary {
+    background-color: #FF6B35;
+    color: white;
+  }
+
+  .btn-primary:hover {
+    background-color: #D94E1F;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(255, 107, 53, 0.3);
+  }
+
+  .btn-secondary {
+    background-color: transparent;
+    color: #FF6B35;
+    border: 2px solid #FF6B35;
+  }
+
+  .btn-secondary:hover {
+    background-color: #FF6B35;
+    color: white;
+    transform: translateY(-2px);
+  }
+}
