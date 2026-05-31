@@ -4,7 +4,8 @@ import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 const heroSlides = [
   {
-    image: '/slider/kenyan-safari.jpg',
+    mobileImage: '/slider/kenyan-safari-mobile.png',
+    desktopImage: '/slider/kenyan-safari.jpg',
     fallback: 'linear-gradient(135deg, #0F2A2E 0%, #00C9D7 52%, #FF6B35 100%)',
     eyebrow: 'Kenya, beautifully planned',
     title: 'Safari mornings, coast sunsets, zero guesswork.',
@@ -14,17 +15,19 @@ const heroSlides = [
     secondaryAction: 'Build My Trip',
   },
   {
-    image: '/slider/kenya-airways.png',
+    mobileImage: '/tours/airways.jpg',
+    desktopImage: '/slider/kenya-airways.png',
     fallback: 'linear-gradient(135deg, #1A1A1A 0%, #D94E1F 54%, #FFC107 100%)',
     eyebrow: 'Beyond borders',
-    title: 'From Nairobi to anywhere worth remembering.',
+    title: 'From Kenya to anywhere worth remembering.',
     description:
       'Pentagon Quest connects Kenyan travelers to international escapes with smart itineraries, clear logistics, and travel support that stays close.',
     primaryAction: 'View International Trips',
     secondaryAction: 'Talk To An Expert',
   },
   {
-    image: '/slider/tour-bus.png',
+    mobileImage: '/slider/tour-bus-mobile.png',
+    desktopImage: '/slider/tour-bus.png',
     fallback: 'linear-gradient(135deg, #009CA6 0%, #1A1A1A 48%, #FF6B35 100%)',
     eyebrow: 'Groups, couples, families',
     title: 'Trips with rhythm, detail, and a little wonder.',
@@ -37,7 +40,9 @@ const heroSlides = [
 
 export default function Hero() {
   const [activeSlide, setActiveSlide] = useState(0);
+  const [isDesktop, setIsDesktop] = useState(false);
   const currentSlide = heroSlides[activeSlide];
+  const currentImage = isDesktop ? currentSlide.desktopImage : currentSlide.mobileImage;
 
   useEffect(() => {
     const timer = window.setInterval(() => {
@@ -45,6 +50,19 @@ export default function Hero() {
     }, 6500);
 
     return () => window.clearInterval(timer);
+  }, []);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(min-width: 768px)');
+
+    const handleBreakpointChange = () => {
+      setIsDesktop(mediaQuery.matches);
+    };
+
+    handleBreakpointChange();
+    mediaQuery.addEventListener('change', handleBreakpointChange);
+
+    return () => mediaQuery.removeEventListener('change', handleBreakpointChange);
   }, []);
 
   const showPreviousSlide = () => {
@@ -66,8 +84,8 @@ export default function Hero() {
           transition={{ duration: 1.15, ease: [0.22, 1, 0.36, 1] }}
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: currentSlide.image
-              ? `url("${currentSlide.image}")`
+            backgroundImage: currentImage
+              ? `url("${currentImage}")`
               : currentSlide.fallback,
           }}
         />

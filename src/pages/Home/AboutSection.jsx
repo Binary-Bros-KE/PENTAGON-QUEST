@@ -4,7 +4,7 @@ import { FaCompass, FaRoute, FaUsers } from 'react-icons/fa';
 const aboutImage = '/climbing-mt-kenya.jpg';
 
 const stats = [
-  { value: '2025', label: 'Founded in Nairobi' },
+  { value: 'KE.', label: 'Proudly Kenyan' },
   { value: '24/7', label: 'Travel accessibility' },
   { value: 'E.A.', label: 'East Africa expertise' },
 ];
@@ -29,7 +29,7 @@ const pillars = [
 
 export default function AboutSection() {
   return (
-    <section id="about" className="relative overflow-hidden bg-white px-5 py-24 md:px-8">
+    <section id="about" className="relative overflow-hidden bg-white mx-2 py-24 md:px-8">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[0.95fr_1.05fr] gap-14 items-center">
         <motion.div
           initial={{ opacity: 0, x: -24 }}
@@ -39,7 +39,7 @@ export default function AboutSection() {
           className="relative"
         >
           <div
-            className="aspect-[4/5] min-h-[32rem] rounded bg-cover bg-center shadow-[0_28px_80px_rgba(26,26,26,0.14)]"
+            className="aspect-[4/5] min-h-[32rem] rounded bg-cover bg-center shadow-[0_28px_80px_rgba(26,26,26,0.14)] max-md:mr-2"
             style={{
               backgroundImage: aboutImage
                 ? `url("${aboutImage}")`
