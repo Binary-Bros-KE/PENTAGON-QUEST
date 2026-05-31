@@ -10,6 +10,7 @@ import {
 } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { GrMapLocation } from 'react-icons/gr';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -54,10 +55,10 @@ export default function Footer() {
   ];
 
   const socialLinks = [
-    { icon: FaFacebook, href: '#', label: 'Facebook' },
-    { icon: FaInstagram, href: '#', label: 'Instagram' },
-    { icon: FaTwitter, href: '#', label: 'Twitter' },
-    { icon: FaLinkedin, href: '#', label: 'LinkedIn' },
+    { icon: FaFacebook, href: 'https://www.facebook.com/pentagonquest', label: 'Facebook' },
+    { icon: FaInstagram, href: 'https://www.instagram.com/pentagonquest', label: 'Instagram' },
+    { icon: FaTwitter, href: 'https://twitter.com/pentagonquest', label: 'Twitter' },
+    { icon: FaLinkedin, href: 'https://www.linkedin.com/company/pentagonquest', label: 'LinkedIn' },
   ];
 
   return (
@@ -137,15 +138,19 @@ export default function Footer() {
             <div className="mb-8 grid gap-3 text-sm text-gray-light">
               <a href="mailto:info@pentagonquest.com" className="flex items-center gap-3 text-gray-light hover:text-primary transition-colors duration-200">
                 <FaEnvelope className="text-primary" size={16} />
-               pentagonxquest@gmail.com
+                pentagonxquest@gmail.com
               </a>
               <a href="tel:+15551234567" className="flex items-center gap-3 text-gray-light hover:text-primary transition-colors duration-200">
                 <FaPhone className="text-primary" size={16} />
-                0718620982 / 0738250686
+                0718620982 / 0726528015
               </a>
               <div className="flex items-center gap-3">
                 <FaMapMarkerAlt className="text-secondary" size={16} />
-                Offices in: Eldoret and Kericho
+                Offices in: Nairobi, Eldoret and Kericho
+              </div>
+              <div className="flex items-center gap-3">
+                <GrMapLocation className="text-secondary" size={16} />
+                Post office P.o box 23575-00100 Nairobi, Kenya
               </div>
             </div>
 

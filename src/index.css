@@ -39,9 +39,9 @@
   --primary-dark: #EBB84B;
   
   /* Secondary: Cyan/Turquoise (from logo) */
-  --secondary: #00C9D7;
-  --secondary-light: #5FE3E6;
-  --secondary-dark: #009CA6;
+  --secondary: #EBB84B;
+  --secondary-light: #FFB380;
+  --secondary-dark: #EBB84B;
   
   /* Neutrals */
   --dark: #1A1A1A;

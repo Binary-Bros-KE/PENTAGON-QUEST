@@ -43,9 +43,9 @@ export default function Header() {
   ];
 
   const socialLinks = [
-    { icon: FaFacebook, href: '#' },
-    { icon: FaInstagram, href: '#' },
-    { icon: FaTwitter, href: '#' },
+    { icon: FaFacebook, href: 'https://www.facebook.com/pentagonquest' },
+    { icon: FaInstagram, href: 'https://www.instagram.com/pentagonquest' },
+    { icon: FaTwitter, href: 'https://twitter.com/pentagonquest' },
   ];
 
   return (
@@ -61,11 +61,11 @@ export default function Header() {
               </div>
               <div className="flex items-center gap-2 text-sm text-white/85">
                 <FaPhone className="text-primary" size={16} />
-                <span>0718620982 / 0738250686</span>
+                <span>0718620982 / 0726528015</span>
               </div>
               <div className="flex items-center gap-2 text-sm text-white/85">
                 <FaMapMarkerAlt className="text-secondary" size={15} />
-                <span>Offices in Kericho & Eldoret</span>
+                <span>Offices in Nairobi, Kericho & Eldoret</span>
               </div>
             </div>
 
@@ -93,9 +93,9 @@ export default function Header() {
         <div className="bg-dark text-white px-4 py-3">
           <div className="flex items-center justify-between">
             <span className="text-xs font-semibold uppercase tracking-[0.18em] text-white/75 flex items-center gap-2">
-            {/* call icon */}
+              {/* call icon */}
               <FaPhone className="text-primary" size={14} />
-            0718620982 / 0738250686
+              0718620982 / 0726528015
             </span>
             <div className="flex items-center gap-3">
               {socialLinks.map((social, idx) => {
@@ -117,9 +117,8 @@ export default function Header() {
 
       {/* Bottom Strip - Sticky */}
       <nav
-        className={`bg-white/95 backdrop-blur border-b border-border transition-all duration-300 ${
-          isSticky ? 'fixed top-0 left-0 right-0 shadow-[0_16px_45px_rgba(26,26,26,0.08)] z-50' : ''
-        }`}
+        className={`bg-white/95 backdrop-blur border-b border-border transition-all duration-300 ${isSticky ? 'fixed top-0 left-0 right-0 shadow-[0_16px_45px_rgba(26,26,26,0.08)] z-50' : ''
+          }`}
       >
         <div className="max-w-7xl mx-auto px-5 md:px-8 py-4 flex items-center justify-between gap-6">
           {/* Logo */}
@@ -128,8 +127,8 @@ export default function Header() {
               <img src="/logo.png" alt="Pentagon Quest" className="h-11 w-11 object-contain" />
             </span>
             <span className="leading-none">
-              <span className="block text-dark font-black text-xl tracking-wide">PENTAGON</span>
-              <span className="block text-primary font-bold text-sm tracking-[0.24em]">QUEST</span>
+              <span className="block text-dark font-black text-xl max-md:text-lg tracking-wide">PENTAGON QUEST</span>
+              <span className="block text-primary font-bold text-sm tracking-[0.24em]">The Safari Xplus</span>
             </span>
           </Link>
 
@@ -141,11 +140,10 @@ export default function Header() {
                   key={link.name}
                   to={link.path}
                   end={link.path === '/'}
-                  className={({ isActive }) => `rounded-full px-4 py-2 text-sm font-bold transition-all duration-200 ${
-                    isActive
+                  className={({ isActive }) => `rounded-full px-4 py-2 text-sm font-bold transition-all duration-200 ${isActive
                       ? 'bg-dark text-white shadow-sm'
                       : 'text-dark hover:bg-white hover:text-primary hover:shadow-sm'
-                  }`}
+                    }`}
                 >
                   {link.name}
                 </NavLink>
@@ -190,9 +188,8 @@ export default function Header() {
                     to={link.path}
                     end={link.path === '/'}
                     onClick={() => setIsMenuOpen(false)}
-                    className={({ isActive }) => `rounded px-4 py-3 transition-colors duration-200 font-semibold ${
-                      isActive ? 'bg-dark text-white' : 'text-dark hover:bg-muted hover:text-primary'
-                    }`}
+                    className={({ isActive }) => `rounded px-4 py-3 transition-colors duration-200 font-semibold ${isActive ? 'bg-dark text-white' : 'text-dark hover:bg-muted hover:text-primary'
+                      }`}
                   >
                     {link.name}
                   </NavLink>

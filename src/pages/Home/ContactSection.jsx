@@ -40,7 +40,7 @@ export default function ContactSection() {
             <div className="rounded border border-border bg-muted p-5">
               <FaMapMarkerAlt className="mb-4 text-secondary" size={20} />
               <p className="text-xs font-black uppercase tracking-wide text-gray">Offices</p>
-              <p className="mt-2 text-sm font-bold text-dark">Eldoret and <br></br> Kericho</p>
+              <p className="mt-2 text-sm font-bold text-dark">Nairobi, Eldoret and <br></br> Kericho</p>
             </div>
           </div>
 

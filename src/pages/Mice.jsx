@@ -9,7 +9,7 @@ export default function Mice() {
         eyebrow="MICE tourism"
         title="Meetings, incentives, conferences, and exhibitions handled with precision."
         text="We design and manage corporate travel programs that motivate teams, support business goals, and keep group logistics clean."
-        image=""
+        image="/mice/mice.jpg"
       />
       <MiceSection />
       <ContactSection />

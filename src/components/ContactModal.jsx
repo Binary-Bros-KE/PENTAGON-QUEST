@@ -12,21 +12,21 @@ const contactOptions = [
   {
     icon: FaWhatsapp,
     title: 'WhatsApp',
-    detail: 'Trip Reservations',
-    href: 'https://wa.me/254718620982',
+    detail: 'Silvanus Koech',
+    href: 'https://wa.me/254726528015',
     color: 'text-green-500',
   },
   {
     icon: FaWhatsapp,
     title: 'WhatsApp',
-    detail: 'Travel Support',
-    href: 'https://wa.me/254738250686',
+    detail: 'Simeon Rono',
+    href: 'https://wa.me/254718620982',
     color: 'text-green-500',
   },
   {
     icon: FaPhone,
     title: 'Call Us',
-    detail: '0718620982 / 0738250686',
+    detail: '0718620982 / 0726528015',
     href: 'tel:+254718620982',
     color: 'text-primary',
   },
@@ -154,6 +154,7 @@ export function ContactModalProvider({ children }) {
                 </div>
 
                 <div className="mt-5 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 border-t border-border pt-5 text-xs font-bold text-gray">
+                  <span>Nairobi Office</span>
                   <span>Kericho Office</span>
                   <span>Eldoret Office</span>
                   <span>Kenyan & International Tours</span>
