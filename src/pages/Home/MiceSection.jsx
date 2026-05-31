@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { FaBriefcase, FaChartLine, FaClipboardCheck, FaHandshake } from 'react-icons/fa';
 
-const miceImage = '/mice-tourism.jpg';
+const miceImage = '/mice-tourism.png';
 
 const items = [
   { icon: FaClipboardCheck, label: 'Program design' },
