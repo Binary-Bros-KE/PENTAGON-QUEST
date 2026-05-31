@@ -90,7 +90,11 @@ export default function Header() {
       {isMobile && (
         <div className="bg-dark text-white px-4 py-3">
           <div className="flex items-center justify-between">
-            <span className="text-xs font-semibold uppercase tracking-[0.18em] text-white/75">Pentagon Quest</span>
+            <span className="text-xs font-semibold uppercase tracking-[0.18em] text-white/75 flex items-center gap-2">
+            {/* call icon */}
+              <FaPhone className="text-primary" size={14} />
+            0718620982 / 0738250686
+            </span>
             <div className="flex items-center gap-3">
               {socialLinks.map((social, idx) => {
                 const Icon = social.icon;
