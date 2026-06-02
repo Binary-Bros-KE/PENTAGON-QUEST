@@ -1,6 +1,7 @@
-import AboutSection from './AboutSection';
 import ContactSection from './ContactSection';
 import DestinationsSection from './DestinationsSection';
+import AboutSection from './AboutSection';
+import DirectorMessage from './DirectorMessage';
 import Hero from './Hero';
 import MiceSection from './MiceSection';
 import ServicesSection from './ServicesSection';
@@ -14,6 +15,7 @@ export default function Home() {
       <AboutSection />
       <ServicesSection />
       <DestinationsSection />
+      <DirectorMessage />
       <MiceSection />
       <WhyChooseUs />
       <TestimonialsSection />

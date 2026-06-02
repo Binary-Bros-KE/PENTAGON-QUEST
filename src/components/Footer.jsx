@@ -6,6 +6,7 @@ import {
   FaLinkedin,
   FaMapMarkerAlt,
   FaPhone,
+  FaTiktok,
   FaTwitter,
 } from 'react-icons/fa';
 import { motion } from 'framer-motion';
@@ -57,7 +58,7 @@ export default function Footer() {
   const socialLinks = [
     { icon: FaFacebook, href: 'https://www.facebook.com/pentagonquest', label: 'Facebook' },
     { icon: FaInstagram, href: 'https://www.instagram.com/pentagonquest', label: 'Instagram' },
-    { icon: FaTwitter, href: 'https://twitter.com/pentagonquest', label: 'Twitter' },
+    { icon: FaTiktok, href: 'https://tiktok.com/pentagonquest', label: 'Twitter' },
     { icon: FaLinkedin, href: 'https://www.linkedin.com/company/pentagonquest', label: 'LinkedIn' },
   ];
 
@@ -142,7 +143,7 @@ export default function Footer() {
               </a>
               <a href="tel:+15551234567" className="flex items-center gap-3 text-gray-light hover:text-primary transition-colors duration-200">
                 <FaPhone className="text-primary" size={16} />
-                0718620982 / 0726528015
+                +25418620982 / +25426528015
               </a>
               <div className="flex items-center gap-3">
                 <FaMapMarkerAlt className="text-secondary" size={16} />
@@ -150,7 +151,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-3">
                 <GrMapLocation className="text-secondary" size={16} />
-                Post office P.o box 23575-00100 Nairobi, Kenya
+                P.o box 23575-00100 Nairobi, Kenya
               </div>
             </div>
 

@@ -1,4 +1,5 @@
 import AboutSection from './Home/AboutSection';
+import DirectorMessage from './Home/DirectorMessage';
 import TestimonialsSection from './Home/TestimonialsSection';
 import WhyChooseUs from './Home/WhyChooseUs';
 import PageIntro from './PageIntro';
@@ -14,6 +15,7 @@ export default function About() {
       />
       <AboutSection />
       <WhyChooseUs />
+      <DirectorMessage />
       <TestimonialsSection />
     </div>
   );

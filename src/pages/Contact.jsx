@@ -1,4 +1,5 @@
 import ContactSection from './Home/ContactSection';
+import DirectorMessage from './Home/DirectorMessage';
 import PageIntro from './PageIntro';
 
 export default function Contact() {
@@ -11,6 +12,7 @@ export default function Contact() {
         image="/contact/traditional-telephone.jpg"
       />
       <ContactSection />
+      <DirectorMessage />
     </div>
   );
 }

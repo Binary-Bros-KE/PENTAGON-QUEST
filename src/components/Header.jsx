@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaBars, FaTimes, FaFacebook, FaInstagram, FaTwitter, FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
+import { FaBars, FaTimes, FaFacebook, FaInstagram, FaPhone, FaEnvelope, FaMapMarkerAlt, FaTiktok } from 'react-icons/fa';
 import { Link, NavLink } from 'react-router-dom';
 import { useContactModal } from '../hooks/useContactModal';
 
@@ -45,7 +45,7 @@ export default function Header() {
   const socialLinks = [
     { icon: FaFacebook, href: 'https://www.facebook.com/pentagonquest' },
     { icon: FaInstagram, href: 'https://www.instagram.com/pentagonquest' },
-    { icon: FaTwitter, href: 'https://twitter.com/pentagonquest' },
+    { icon: FaTiktok, href: 'https://www.tiktok.com/@pentagonquest' },
   ];
 
   return (
@@ -61,7 +61,7 @@ export default function Header() {
               </div>
               <div className="flex items-center gap-2 text-sm text-white/85">
                 <FaPhone className="text-primary" size={16} />
-                <span>0718620982 / 0726528015</span>
+                <span>+254718620982/+254726528015</span>
               </div>
               <div className="flex items-center gap-2 text-sm text-white/85">
                 <FaMapMarkerAlt className="text-secondary" size={15} />
@@ -95,7 +95,7 @@ export default function Header() {
             <span className="text-xs font-semibold uppercase tracking-[0.18em] text-white/75 flex items-center gap-2">
               {/* call icon */}
               <FaPhone className="text-primary" size={14} />
-              0718620982 / 0726528015
+              +254718620982 / +254726528015
             </span>
             <div className="flex items-center gap-3">
               {socialLinks.map((social, idx) => {
@@ -127,8 +127,8 @@ export default function Header() {
               <img src="/logo.png" alt="Pentagon Quest" className="h-11 w-11 object-contain" />
             </span>
             <span className="leading-none">
-              <span className="block text-dark font-black text-xl max-md:text-lg tracking-wide">PENTAGON QUEST</span>
-              <span className="block text-primary font-bold text-sm tracking-[0.24em]">The Safari Xplus</span>
+              <span className="block text-dark font-black text-xl max-md:text-sm tracking-wide">PENTAGON QUEST</span>
+              <span className="block text-primary font-bold text-sm max-md:text-xs tracking-[0.24em]">The Safari Xplus</span>
             </span>
           </Link>
 
