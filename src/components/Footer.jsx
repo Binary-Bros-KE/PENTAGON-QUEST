@@ -143,7 +143,7 @@ export default function Footer() {
               </a>
               <a href="tel:+15551234567" className="flex items-center gap-3 text-gray-light hover:text-primary transition-colors duration-200">
                 <FaPhone className="text-primary" size={16} />
-                +25418620982 / +25426528015
+                +254718620982 / +254726528015
               </a>
               <div className="flex items-center gap-3">
                 <FaMapMarkerAlt className="text-secondary" size={16} />
