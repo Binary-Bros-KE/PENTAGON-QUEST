@@ -30,7 +30,7 @@ export default function ContactSection() {
             <a href="tel:+254718620982" className="rounded border border-border bg-muted p-5 hover:border-primary transition-colors duration-200">
               <FaPhone className="mb-4 text-primary" size={20} />
               <p className="text-xs font-black uppercase tracking-wide text-gray">Call</p>
-              <p className="mt-2 text-sm font-bold text-dark">+25418620982 / +25438250686 </p>
+              <p className="mt-2 text-sm font-bold text-dark">+254718620982 / +254726528015 </p>
             </a>
             <a href="mailto:info@pentagonquest.com" className="rounded border border-border bg-muted p-5 hover:border-primary transition-colors duration-200">
               <FaEnvelope className="mb-4 text-primary" size={20} />
