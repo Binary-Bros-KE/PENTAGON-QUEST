@@ -8,6 +8,7 @@ import {
   FaPhone,
   FaTiktok,
   FaTwitter,
+  FaYoutube,
 } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
