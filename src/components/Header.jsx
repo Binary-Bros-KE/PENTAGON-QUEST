@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaBars, FaTimes, FaFacebook, FaInstagram, FaPhone, FaEnvelope, FaMapMarkerAlt, FaTiktok } from 'react-icons/fa';
+import { FaBars, FaTimes, FaFacebook, FaInstagram, FaPhone, FaEnvelope, FaMapMarkerAlt, FaTiktok, FaYoutube } from 'react-icons/fa';
 import { Link, NavLink } from 'react-router-dom';
 import { useContactModal } from '../hooks/useContactModal';
 
@@ -43,9 +43,10 @@ export default function Header() {
   ];
 
   const socialLinks = [
-    { icon: FaFacebook, href: 'https://www.facebook.com/pentagonquest' },
-    { icon: FaInstagram, href: 'https://www.instagram.com/pentagonquest' },
-    { icon: FaTiktok, href: 'https://www.tiktok.com/@pentagonquest' },
+    { icon: FaFacebook, href: 'https://www.facebook.com/share/1CYCWKTKo7/' },
+    { icon: FaInstagram, href: 'https://www.instagram.com/pentagon_quest?igsh=aHp3Z21jNWtuZnhw' },
+    { icon: FaTiktok, href: 'https://www.tiktok.com/@pentagonsafaris?_r=1&_t=ZT-96uaI8vbsgY' },
+    { icon: FaYoutube, href: 'https://youtube.com/@pentaa-m2f?si=WRRP21gl1EGuSrxX' },
   ];
 
   return (
@@ -77,6 +78,7 @@ export default function Header() {
                   <a
                     key={idx}
                     href={social.href}
+                    target='_blank'
                     className="text-white/80 hover:text-primary transition-colors duration-200"
                   >
                     <Icon size={18} />

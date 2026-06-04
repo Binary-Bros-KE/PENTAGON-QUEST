@@ -56,10 +56,10 @@ export default function Footer() {
   ];
 
   const socialLinks = [
-    { icon: FaFacebook, href: 'https://www.facebook.com/pentagonquest', label: 'Facebook' },
-    { icon: FaInstagram, href: 'https://www.instagram.com/pentagonquest', label: 'Instagram' },
-    { icon: FaTiktok, href: 'https://tiktok.com/pentagonquest', label: 'Twitter' },
-    { icon: FaLinkedin, href: 'https://www.linkedin.com/company/pentagonquest', label: 'LinkedIn' },
+    { icon: FaFacebook, href: 'https://www.facebook.com/share/1CYCWKTKo7/', label: 'Facebook' },
+    { icon: FaInstagram, href: 'https://www.instagram.com/pentagon_quest?igsh=aHp3Z21jNWtuZnhw', label: 'Instagram' },
+    { icon: FaTiktok, href: 'https://www.tiktok.com/@pentagonsafaris?_r=1&_t=ZT-96uaI8vbsgY', label: 'TikTok' },
+    { icon: FaYoutube, href: 'https://youtube.com/@pentaa-m2f?si=WRRP21gl1EGuSrxX', label: 'YouTube' },
   ];
 
   return (
