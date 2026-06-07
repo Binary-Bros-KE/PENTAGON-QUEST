@@ -31,7 +31,7 @@ const heroSlides = [
     desktopImage: '/slider/tour-bus.png',
     fallback: 'linear-gradient(135deg, #009CA6 0%, #1A1A1A 48%, #FF6B35 100%)',
     eyebrow: 'Groups, couples, families',
-    title: 'Trips with rhythm, detail, and a little AMAZEMENT.',
+    title: 'Trips with rhythm, detail, and a little wonder.',
     description:
       'Whether it is a honeymoon, team retreat, family holiday, or private adventure, we design the route so the experience feels effortless.',
     primaryAction: 'Plan A Custom Tour',
