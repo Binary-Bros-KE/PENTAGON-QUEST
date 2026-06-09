@@ -11,7 +11,7 @@ export default function About() {
         eyebrow="About Pentagon Quest"
         title="A Kenyan travel partner built on care, ethics, and detail."
         text="Pentagon Quest provides leisure, business, safari, and exclusive travel services for clients who want reliable planning and memorable experiences."
-        image="/about/about.png"
+        image="/start-here.jpeg"
       />
       <AboutSection />
       <WhyChooseUs />

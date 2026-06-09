@@ -3,11 +3,9 @@ import {
   FaEnvelope,
   FaFacebook,
   FaInstagram,
-  FaLinkedin,
   FaMapMarkerAlt,
   FaPhone,
   FaTiktok,
-  FaTwitter,
   FaYoutube,
 } from 'react-icons/fa';
 import { motion } from 'framer-motion';
@@ -22,9 +20,9 @@ export default function Footer() {
       title: 'Explore',
       links: [
         { name: 'Tours & Safaris', href: '/tours' },
+        { name: 'Current Offers', href: '/current-tours' },
+        { name: 'Gallery', href: '/gallery' },
         { name: 'Local & International Tours', href: '/tours' },
-        { name: 'MICE Tourism', href: '/mice' },
-        { name: 'Airport Transfers', href: '/services' },
       ],
     },
     {

@@ -1,7 +1,7 @@
 import { FaEnvelope, FaMapMarkerAlt, FaPhone } from 'react-icons/fa';
 import { useContactModal } from '../../hooks/useContactModal';
 
-const contactImage = '/start-here.jpg';
+const contactImage = '/start-here.jpeg';
 
 export default function ContactSection() {
   const { openContactModal } = useContactModal();

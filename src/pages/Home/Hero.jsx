@@ -4,6 +4,17 @@ import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import { useContactModal } from '../../hooks/useContactModal';
 
 const heroSlides = [
+    {
+    mobileImage: '/slider/desk.jpeg',
+    desktopImage: '/slider/desk.jpeg',
+    fallback: 'linear-gradient(135deg, #009CA6 0%, #1A1A1A 48%, #FF6B35 100%)',
+    eyebrow: 'Groups, couples, families',
+    title: 'Trips with rhythm, detail, and a little wonder.',
+    description:
+      'Whether it is a honeymoon, team retreat, family holiday, or private adventure, we design the route so the experience feels effortless.',
+    primaryAction: 'Plan A Custom Tour',
+    secondaryAction: 'See Packages',
+  },
   {
     mobileImage: '/slider/kenyan-safari-mobile.png',
     desktopImage: '/slider/kenyan-safari.jpg',
@@ -26,17 +37,6 @@ const heroSlides = [
     primaryAction: 'View International Trips',
     secondaryAction: 'Talk To An Expert',
   },
-  {
-    mobileImage: '/slider/tour-bus-mobile.png',
-    desktopImage: '/slider/tour-bus.png',
-    fallback: 'linear-gradient(135deg, #009CA6 0%, #1A1A1A 48%, #FF6B35 100%)',
-    eyebrow: 'Groups, couples, families',
-    title: 'Trips with rhythm, detail, and a little wonder.',
-    description:
-      'Whether it is a honeymoon, team retreat, family holiday, or private adventure, we design the route so the experience feels effortless.',
-    primaryAction: 'Plan A Custom Tour',
-    secondaryAction: 'See Packages',
-  },
 ];
 
 export default function Hero() {
@@ -49,7 +49,7 @@ export default function Hero() {
   useEffect(() => {
     const timer = window.setInterval(() => {
       setActiveSlide((current) => (current + 1) % heroSlides.length);
-    }, 6500);
+    }, 9500);
 
     return () => window.clearInterval(timer);
   }, []);

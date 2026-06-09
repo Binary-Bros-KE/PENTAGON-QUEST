@@ -38,7 +38,9 @@ export default function Header() {
     { name: 'About', path: '/about' },
     { name: 'Services', path: '/services' },
     { name: 'Tours', path: '/tours' },
+    { name: 'Offers', path: '/current-tours' },
     { name: 'MICE', path: '/mice' },
+    { name: 'Gallery', path: '/gallery' },
     { name: 'Contact', path: '/contact' },
   ];
 
@@ -142,7 +144,7 @@ export default function Header() {
                   key={link.name}
                   to={link.path}
                   end={link.path === '/'}
-                  className={({ isActive }) => `rounded-full px-4 py-2 text-sm font-bold transition-all duration-200 ${isActive
+                  className={({ isActive }) => `rounded-full px-3 py-2 text-sm font-bold transition-all duration-200 ${isActive
                       ? 'bg-dark text-white shadow-sm'
                       : 'text-dark hover:bg-white hover:text-primary hover:shadow-sm'
                     }`}
