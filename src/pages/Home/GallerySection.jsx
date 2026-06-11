@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { FaArrowRight, FaTimes } from 'react-icons/fa';
-import { galleryImages } from './galleryData';
+import { galleryImages, watermarkedGalleryImages } from './galleryData';
 
 const sizeClasses = [
   'md:col-span-2 md:row-span-2 aspect-[4/5]',
@@ -22,6 +22,7 @@ export default function GallerySection({
 }) {
   const [selectedImage, setSelectedImage] = useState(null);
   const visibleImages = galleryImages.slice(0, limit);
+  const selectedImageHasWatermark = selectedImage && watermarkedGalleryImages.includes(selectedImage);
 
   return (
     <section className="bg-white px-5 py-24 md:px-8">
@@ -64,12 +65,14 @@ export default function GallerySection({
                 loading="lazy"
                 className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
-              <img
-                src="/logo.png"
-                alt=""
-                aria-hidden="true"
-                className="pointer-events-none absolute left-1/2 top-1/2 z-10 h-20 w-20 -translate-x-1/2 -translate-y-1/2 object-contain opacity-[0.35] sm:h-24 sm:w-24"
-              />
+              {watermarkedGalleryImages.includes(image) && (
+                <img
+                  src="/logo.png"
+                  alt=""
+                  aria-hidden="true"
+                  className="pointer-events-none absolute left-1/2 top-1/2 z-10 h-20 w-20 -translate-x-1/2 -translate-y-1/2 object-contain opacity-[0.35] sm:h-24 sm:w-24"
+                />
+              )}
               <span className="absolute inset-0 bg-gradient-to-t from-dark/70 via-dark/10 to-transparent opacity-80 transition-opacity duration-300 group-hover:opacity-100"></span>
               <span className="absolute bottom-4 left-4 rounded-full border border-white/25 bg-white/10 px-3 py-1 text-xs font-black uppercase tracking-[0.18em] text-white backdrop-blur">
                 {String(index + 1).padStart(2, '0')}
@@ -110,12 +113,14 @@ export default function GallerySection({
                   alt="Pentagon Quest gallery preview"
                   className="max-h-[78vh] w-full rounded object-contain shadow-[0_30px_100px_rgba(0,0,0,0.4)]"
                 />
-                <img
-                  src="/logo.png"
-                  alt=""
-                  aria-hidden="true"
-                  className="pointer-events-none absolute left-1/2 top-1/2 h-24 w-24 -translate-x-1/2 -translate-y-1/2 object-contain opacity-[0.35] sm:h-32 sm:w-32"
-                />
+                {selectedImageHasWatermark && (
+                  <img
+                    src="/logo.png"
+                    alt=""
+                    aria-hidden="true"
+                    className="pointer-events-none absolute left-1/2 top-1/2 h-24 w-24 -translate-x-1/2 -translate-y-1/2 object-contain opacity-[0.35] sm:h-32 sm:w-32"
+                  />
+                )}
               </div>
             </motion.div>
           </motion.div>
