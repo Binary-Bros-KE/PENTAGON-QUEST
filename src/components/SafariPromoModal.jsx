@@ -1,10 +1,22 @@
 import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
-import { FaDownload, FaPhone, FaTimes, FaWhatsapp } from 'react-icons/fa';
+import { FaPhone, FaTimes, FaWhatsapp } from 'react-icons/fa';
+
+const promoPosters = [
+  {
+    image: '/poster.jpeg',
+    label: 'Safari Tour',
+  },
+  {
+    image: '/poster_2_COST_KENYA.jpeg',
+    label: 'Coast Kenya',
+  },
+];
 
 export default function SafariPromoModal() {
   const [isOpen, setIsOpen] = useState(false);
+  const [activePoster, setActivePoster] = useState(promoPosters[0]);
   const location = useLocation();
 
   useEffect(() => {
@@ -51,30 +63,37 @@ export default function SafariPromoModal() {
             </button>
 
             <div className="relative h-56 bg-dark sm:h-72 md:h-auto md:min-h-[31rem]">
-              <img src="/poster.jpeg" alt="Pentagon Quest safari tour brochure" className="absolute inset-0 h-full w-full object-cover object-top" />
+              <img src={activePoster.image} alt={`${activePoster.label} Pentagon Quest offer poster`} className="absolute inset-0 h-full w-full object-cover object-top" />
               <div className="absolute inset-0 bg-gradient-to-t from-dark/80 via-dark/10 to-transparent"></div>
-              <a
-                href="/poster.jpeg"
-                download="pentagon-quest-safari-tour-brochure.jpeg"
-                className="absolute bottom-4 left-4 inline-flex items-center gap-2 rounded bg-white px-4 py-3 text-xs font-black uppercase tracking-wide text-dark hover:bg-primary hover:text-white transition-colors duration-200"
-              >
-                <FaDownload size={13} />
-                <span className="hidden sm:inline">Download Brochure</span>
-                <span className="sm:hidden">Download</span>
-              </a>
+              <div className="absolute bottom-4 left-4 right-4 grid grid-cols-2 gap-2">
+                {promoPosters.map((poster) => (
+                  <button
+                    key={poster.image}
+                    type="button"
+                    onClick={() => setActivePoster(poster)}
+                    className={`rounded px-3 py-2 text-xs font-black uppercase tracking-wide transition-colors duration-200 ${
+                      activePoster.image === poster.image
+                        ? 'bg-primary text-white'
+                        : 'bg-white/90 text-dark hover:bg-white'
+                    }`}
+                  >
+                    {poster.label}
+                  </button>
+                ))}
+              </div>
             </div>
 
             <div className="max-h-[62vh] overflow-y-auto p-5 sm:p-7 md:max-h-none md:overflow-visible md:p-8">
-              <p className="mb-3 text-xs font-black uppercase tracking-[0.22em] text-primary sm:text-sm">Limited safari packages</p>
+              <p className="mb-3 text-xs font-black uppercase tracking-[0.22em] text-primary sm:text-sm">Current travel offers</p>
               <h2 id="safari-promo-title" className="pr-10 text-2xl font-black leading-tight text-dark sm:text-3xl md:text-4xl">
-                Kenya safari offers are now open for booking.
+                New Pentagon Quest offers are open for booking.
               </h2>
               <p className="mt-4 text-sm leading-relaxed text-gray sm:text-base">
-                Choose from Amboseli, Maasai Mara, Lake Nakuru, Lake Naivasha, and combined safari circuits with accommodation, meals, park entries, transfers, and a professional driver guide included.
+                View the latest safari and Coast Kenya package posters, then call or WhatsApp our team to confirm availability and reserve your trip.
               </p>
 
               <div className="mt-5 grid grid-cols-3 gap-2 text-center sm:gap-3">
-                {['3-7 Days', 'From USD 800', '4x4 Jeep'].map((item) => (
+                {['Safaris', 'Coast Kenya', 'Book Now'].map((item) => (
                   <div key={item} className="rounded border border-border bg-muted p-2.5 sm:p-3">
                     <p className="text-[0.68rem] font-black uppercase tracking-wide text-dark sm:text-xs">{item}</p>
                   </div>
