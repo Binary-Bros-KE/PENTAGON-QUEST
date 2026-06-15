@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { FaPhone, FaWhatsapp } from 'react-icons/fa';
 
 const offers = [
-    {
+  {
     id: 'coast',
     label: 'Coast Kenya',
     poster: '/poster_2_COST_KENYA.jpeg',
@@ -19,6 +19,21 @@ const offers = [
       { name: 'Diani Reef Beach Resort & Spa', detail: 'Diani', price: 'From 47,570' },
       { name: 'Neptune Beach Hotel', detail: 'Bamburi', price: 'From 48,344' },
       { name: 'Diani Sea Lodge', detail: 'Diani', price: 'From 35,702' },
+    ],
+  },
+  {
+    id: 'watamu',
+    label: 'Watamu',
+    poster: '/poster_3_watamu.jpeg',
+    eyebrow: 'Watamu coast offer',
+    title: 'Watamu Kenya Coast escape with self-drive, SGR, or flight options.',
+    text: 'Plan a 3-day, 2-night Watamu coastal getaway with flexible transport choices and inclusions such as meals, transfers, outdoor swimming pool access, and evening entertainment.',
+    whatsapp:
+      'https://wa.me/254718620982?text=Hello%20Pentagon%20Quest%2C%20I%20would%20like%20to%20book%20the%20Watamu%20Kenya%20Coast%20package.',
+    rows: [
+      { name: 'Self Drive', detail: '3 Days / 2 Nights', price: 'KES 19,894' },
+      { name: 'SGR Package', detail: '3 Days / 2 Nights', price: 'KES 24,394' },
+      { name: 'Flight Package', detail: '3 Days / 2 Nights', price: 'KES 45,744' },
     ],
   },
   {
@@ -183,7 +198,7 @@ export default function CurrentToursSection({ compact = false, mode = 'tabs' }) 
           <PosterCard offer={activeOffer} />
 
           <div>
-            <div className="mb-7 grid grid-cols-2 gap-3">
+            <div className="mb-7 grid grid-cols-1 gap-3 sm:grid-cols-3">
               {offers.map((offer) => (
                 <button
                   key={offer.id}

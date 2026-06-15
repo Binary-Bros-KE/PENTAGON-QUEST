@@ -12,6 +12,10 @@ const promoPosters = [
     image: '/poster_2_COST_KENYA.jpeg',
     label: 'Coast Kenya',
   },
+  {
+    image: '/poster_3_watamu.jpeg',
+    label: 'Watamu',
+  },
 ];
 
 export default function SafariPromoModal() {
@@ -65,7 +69,7 @@ export default function SafariPromoModal() {
             <div className="relative h-56 bg-dark sm:h-72 md:h-auto md:min-h-[31rem]">
               <img src={activePoster.image} alt={`${activePoster.label} Pentagon Quest offer poster`} className="absolute inset-0 h-full w-full object-cover object-top" />
               <div className="absolute inset-0 bg-gradient-to-t from-dark/80 via-dark/10 to-transparent"></div>
-              <div className="absolute bottom-4 left-4 right-4 grid grid-cols-2 gap-2">
+              <div className="absolute bottom-4 left-4 right-4 grid grid-cols-3 gap-2">
                 {promoPosters.map((poster) => (
                   <button
                     key={poster.image}
@@ -89,11 +93,11 @@ export default function SafariPromoModal() {
                 New Pentagon Quest offers are open for booking.
               </h2>
               <p className="mt-4 text-sm leading-relaxed text-gray sm:text-base">
-                View the latest safari and Coast Kenya package posters, then call or WhatsApp our team to confirm availability and reserve your trip.
+                View the latest safari, Coast Kenya, and Watamu package posters, then call or WhatsApp our team to confirm availability and reserve your trip.
               </p>
 
               <div className="mt-5 grid grid-cols-3 gap-2 text-center sm:gap-3">
-                {['Safaris', 'Coast Kenya', 'Book Now'].map((item) => (
+                {['Safaris', 'Coast Kenya', 'Watamu'].map((item) => (
                   <div key={item} className="rounded border border-border bg-muted p-2.5 sm:p-3">
                     <p className="text-[0.68rem] font-black uppercase tracking-wide text-dark sm:text-xs">{item}</p>
                   </div>
