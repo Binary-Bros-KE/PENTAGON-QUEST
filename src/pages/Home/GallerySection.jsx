@@ -54,9 +54,7 @@ export default function GallerySection({
               transition={{ duration: 0.5, delay: (index % 8) * 0.035 }}
               viewport={{ once: true }}
               onClick={() => setSelectedImage(image)}
-              className={`group relative overflow-hidden rounded bg-dark text-left shadow-[0_18px_55px_rgba(26,26,26,0.1)] ${
-                sizeClasses[index % sizeClasses.length]
-              }`}
+              className={`group relative overflow-hidden rounded bg-dark text-left shadow-[0_18px_55px_rgba(26,26,26,0.1)]}`}
               aria-label={`Open gallery image ${index + 1}`}
             >
               <img
@@ -81,6 +79,31 @@ export default function GallerySection({
           ))}
         </div>
       </div>
+
+      {/* video gallery three videos */}
+<div className="max-w-7xl mx-auto mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+  <div className="relative overflow-hidden rounded bg-dark text-left shadow-[0_18px_55px_rgba(26,26,26,0.1)]">
+    <video
+      src="/video/video-1.mp4"
+      controls
+      className="w-full h-full object-cover"
+    />
+  </div>
+  <div className="relative overflow-hidden rounded bg-dark text-left shadow-[0_18px_55px_rgba(26,26,26,0.1)]">
+    <video
+      src="/video/video-2.mp4"
+      controls
+      className="w-full h-full object-cover"
+    />
+  </div>
+  <div className="relative overflow-hidden rounded bg-dark text-left shadow-[0_18px_55px_rgba(26,26,26,0.1)]">
+    <video
+      src="/video/video-3.mp4"
+      controls
+      className="w-full h-full object-cover"
+    />
+  </div>
+</div>
 
       <AnimatePresence>
         {selectedImage && (
